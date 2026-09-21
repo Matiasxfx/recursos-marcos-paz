@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Recursos Socio-Comunitarios - Marcos Paz 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <span class="badge-regional">Jefatura Distrital & Región 10 — Marcos Paz</span>
+        <h1>Guía de Recursos Socio-Comunitarios</h1>
+        <p>Directorio oficial interactivo de instituciones educativas, de salud, socio-comunitarias, culturales y de seguridad.</p>
+    </header>
+
+    <main>
+        <!-- Panel de Filtros -->
+        <section class="filter-card">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar por institución, barrio, calle o palabra clave...">
+            </div>
+
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="filterRubro">Rubro / Categoría</label>
+                    <select id="filterRubro">
+                        <option value="Todos">Todos los rubros</option>
+                        <option value="Educación">Educación</option>
+                        <option value="Salud">Salud</option>
+                        <option value="Socio-comunitario">Socio-comunitario</option>
+                        <option value="Artística y Cultura">Artística y Cultura</option>
+                        <option value="Justicia y Seguridad">Justicia y Seguridad</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterComuna">Comuna / Zona</label>
+                    <select id="filterComuna">
+                        <option value="Todas">Todas las zonas</option>
+                        <option value="Comuna 1">Comuna 1 (Casco Urbano)</option>
+                        <option value="Comuna 2">Comuna 2</option>
+                        <option value="Comuna 3">Comuna 3</option>
+                        <option value="Comuna 4">Comuna 4</option>
+                        <option value="Comuna 5">Comuna 5</option>
+                        <option value="Comuna 6">Comuna 6</option>
+                        <option value="Comuna 7">Comuna 7</option>
+                        <option value="Comuna 8">Comuna 8</option>
+                        <option value="Zona Rural">Zona Rural</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterGestion">Gestión</label>
+                    <select id="filterGestion">
+                        <option value="Todas">Todas</option>
+                        <option value="Estatal">Estatal / Pública</option>
+                        <option value="Privada">Privada</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Botón de Limpiar Filtros -->
+            <div style="margin-top: 1.25rem; text-align: right;">
+                <button id="btnClearFilters" style="background-color: #e2e8f0; color: #1e293b; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem; transition: background 0.2s;">
+                    Limpiar filtros
+                </button>
+            </div>
+        </section>
+
+        <!-- Contador de Resultados -->
+        <div class="results-info">
+            <span id="resultsCount">Cargando recursos...</span>
+        </div>
+
+        <!-- Grilla de Tarjetas -->
+        <div id="cardsContainer" class="cards-grid">
+            <!-- Las tarjetas se cargan dinámicamente mediante JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>Centro de Orientación Familiar (COF) Marcos Paz — Año 2026</p>
+        <p style="font-size: 0.8rem; margin-top: 0.25rem;">Plataforma interactiva para la comunidad, equipos docentes y Jefatura Distrital.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

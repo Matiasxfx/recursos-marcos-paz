@@ -1,0 +1,356 @@
+// Base de datos - Demo de Recursos Socio-Comunitarios - Marcos Paz 2026
+// Extraído de la Guía Oficial del COF Marcos Paz[cite: 1]
+
+const dbRecursos = [
+    // --- SERVICIOS EDUCATIVOS ---
+    {
+        id: "edu-jardin-901",
+        nombre: "Jardín de Infantes N° 901",
+        rubro: "Educación",
+        subrubro: "Nivel Inicial",
+        gestion: "Estatal (Pública)",
+        direccion: "Belgrano N° 2181",
+        telefono: "11-22922159",
+        email: "jardin901marcospaz@abc.gob.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Directivo: Liliana Castañiza. EOE: Extensión al JI N° 906 Maternal."
+    },
+    {
+        id: "edu-jardin-905",
+        nombre: "Jardín de Infantes N° 905",
+        rubro: "Educación",
+        subrubro: "Nivel Inicial",
+        gestion: "Estatal (Pública)",
+        direccion: "Eva Duarte y El Criollo",
+        telefono: "0220-4775496",
+        email: "jardin905marcospaz@abc.gob.ar",
+        barrio: "Barrio Nuestra Señora de La Paz",
+        comuna: "Comuna 6",
+        detalles: "Directivo: Natalia Orquín. Recibe extensión del JI N° 915."
+    },
+    {
+        id: "edu-jardin-913",
+        nombre: "Jardín de Infantes N° 913",
+        rubro: "Educación",
+        subrubro: "Nivel Inicial",
+        gestion: "Estatal (Pública)",
+        direccion: "Ruta N° 40 Barrio Bicentenario",
+        telefono: "0220-4914095",
+        email: "jardin913marcospaz@abc.gob.ar",
+        barrio: "Bicentenario",
+        comuna: "Comuna 7",
+        detalles: "Directivo: Laura Segovia. Sin EOE."
+    },
+    {
+        id: "edu-primaria-1",
+        nombre: "Escuela Primaria N° 1",
+        rubro: "Educación",
+        subrubro: "Nivel Primario",
+        gestion: "Estatal (Pública)",
+        direccion: "Bartolomé Mitre N° 144",
+        telefono: "0220-4771035",
+        email: "primaria1marcospaz@abc.gob.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Directivo: María del Carmen Domínguez. Con Equipo de Orientación Escolar."
+    },
+    {
+        id: "edu-primaria-6",
+        nombre: "Escuela Primaria N° 6",
+        rubro: "Educación",
+        subrubro: "Nivel Primario",
+        gestion: "Estatal (Pública)",
+        direccion: "Dr. Marcos Paz N° 3444",
+        telefono: "0220-4775914",
+        email: "primaria6marcospaz@abc.gob.ar",
+        barrio: "Gándara",
+        comuna: "Comuna 3",
+        detalles: "Directivo: Maximiliano Gil. Con EOE."
+    },
+    {
+        id: "edu-primaria-12",
+        nombre: "Escuela Primaria N° 12",
+        rubro: "Educación",
+        subrubro: "Nivel Primario",
+        gestion: "Estatal (Pública)",
+        direccion: "Cuartel II. KM 45",
+        telefono: "0220-4774025",
+        email: "primaria12marcospaz@abc.gob.ar",
+        barrio: "Torchiaro",
+        comuna: "Zona Rural",
+        detalles: "Directivo: Mariela Molina. Con EOE."
+    },
+    {
+        id: "edu-secundaria-1",
+        nombre: "Escuela Secundaria N° 1",
+        rubro: "Educación",
+        subrubro: "Nivel Secundario",
+        gestion: "Estatal (Pública)",
+        direccion: "Avellaneda N° 1930",
+        telefono: "0220-4775927",
+        email: "secundaria1marcospaz@abc.gob.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Directivo: Cristina González. Con EOE."
+    },
+    {
+        id: "edu-secundaria-2",
+        nombre: "Escuela Secundaria N° 2",
+        rubro: "Educación",
+        subrubro: "Nivel Secundario",
+        gestion: "Estatal (Pública)",
+        direccion: "Dr. Marcos Paz N° 1850",
+        telefono: "0220-4771189",
+        email: "secundaria2marcospaz@abc.gob.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Directivo: Silvina Bolo. Con EOE."
+    },
+    {
+        id: "edu-tecnica-1",
+        nombre: "Escuela Secundaria Técnica N° 1",
+        rubro: "Educación",
+        subrubro: "Técnica",
+        gestion: "Estatal (Pública)",
+        direccion: "Pueyrredón N° 2180",
+        telefono: "0220-4770931",
+        email: "eest1marcospaz@abc.gob.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 5",
+        detalles: "Directivo: Fabián Dinardo. Con EOE."
+    },
+    {
+        id: "edu-agraria-1",
+        nombre: "Escuela Secundaria Agraria N° 1",
+        rubro: "Educación",
+        subrubro: "Agraria",
+        gestion: "Estatal (Pública)",
+        direccion: "Acceso Juan Carlos Zabala N° 5501",
+        telefono: "11-37274177",
+        email: "eesa1marcospaz@abc.gob.ar",
+        barrio: "Zona Rural",
+        comuna: "Zona Rural",
+        detalles: "Directivo: Ivana Aragona. Con EOE."
+    },
+    {
+        id: "edu-especial-501",
+        nombre: "Escuela Especial N° 501",
+        rubro: "Educación",
+        subrubro: "Educación Especial",
+        gestion: "Estatal (Pública)",
+        direccion: "Dr. Marcos Paz N° 2194",
+        telefono: "0220-4775909",
+        email: "especial501marcospaz@abc.gob.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Directivo: Elsa Paradela. Equipo Técnico."
+    },
+
+    // --- EFECTORES DE SALUD ---
+    {
+        id: "salud-hospital",
+        nombre: "Hospital Municipal Dr. Rubén O. Caporaletti",
+        rubro: "Salud",
+        subrubro: "Hospital / Urgencias",
+        gestion: "Pública (Municipal)",
+        direccion: "Leandro N. Alem N° 250",
+        telefono: "0220-4771924 (Emergencia 107)",
+        email: "No especifica",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Atención integral y guardia 24 hs los 365 días. Especialidades y farmacia REMEDIAR."
+    },
+    {
+        id: "salud-caps-hourquebie",
+        nombre: "CAPS 'Dr. Hourquebie'",
+        rubro: "Salud",
+        subrubro: "CAPS (Atención Primaria)",
+        gestion: "Pública (Municipal)",
+        direccion: "Dorrego N° 465",
+        telefono: "0220-4994244",
+        email: "No especifica",
+        barrio: "Rayito de Sol",
+        comuna: "Comuna 7",
+        detalles: "Atención de 7 a 18 hs. Clínica, pediatría, odontología, psicología, nutrición."
+    },
+    {
+        id: "salud-caps-prado",
+        nombre: "CAPS 'El Prado'",
+        rubro: "Salud",
+        subrubro: "CAPS (Atención Primaria)",
+        gestion: "Pública (Municipal)",
+        direccion: "Calle Monteagudo N° 1005",
+        telefono: "0220-4774315",
+        email: "No especifica",
+        barrio: "El Prado",
+        comuna: "Comuna 2",
+        detalles: "Medicina generalista, enfermería, obstetricia, psicología, psicopedagogía."
+    },
+    {
+        id: "salud-usam",
+        nombre: "CAPS 'Unidad Sanitaria Ambiental (USAM)'",
+        rubro: "Salud",
+        subrubro: "CAPS / Junta de Discapacidad",
+        gestion: "Pública (Municipal)",
+        direccion: "Piedras N° 642",
+        telefono: "0220-4770678",
+        email: "No especifica",
+        barrio: "San Eduardo",
+        comuna: "Comuna 3",
+        detalles: "Sede de Junta Evaluadora de Discapacidad, clínica, odontopediatría y zoonosis."
+    },
+
+    // --- SOCIO-COMUNITARIO Y UMIS ---
+    {
+        id: "soc-municipio",
+        nombre: "Municipalidad de Marcos Paz",
+        rubro: "Socio-comunitario",
+        subrubro: "Gobierno Municipal",
+        gestion: "Pública",
+        direccion: "Aristóbulo del Valle N° 1946",
+        telefono: "0220-4771015",
+        email: "gobierno@marcospaz.gov.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Intendente: Ricardo Curutchet. Secretarías de Gobierno, Desarrollo Social y Salud."
+    },
+    {
+        id: "soc-anses",
+        nombre: "ANSES - UDAI Marcos Paz",
+        rubro: "Socio-comunitario",
+        subrubro: "Organismo Nacional",
+        gestion: "Nacional",
+        direccion: "Libertad N° 2099",
+        telefono: "0220-4773863",
+        email: "No especifica",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Atención de trámites de seguridad social, jubilaciones, AUH y asignaciones."
+    },
+    {
+        id: "soc-umi-bicentenario",
+        nombre: "UMI 'Bicentenario'",
+        rubro: "Socio-comunitario",
+        subrubro: "Unidad Municipal Integrada",
+        gestion: "Pública (Municipal)",
+        direccion: "Regimiento de Patricios N° 72",
+        telefono: "11-23302772",
+        email: "umis@marcospaz.gov.ar",
+        barrio: "Bicentenario",
+        comuna: "Comuna 7",
+        detalles: "Referente: Verónica Isla. Servicios: Aprendemos juntos, Arte, Corte de pelo."
+    },
+    {
+        id: "soc-umi-hornero",
+        nombre: "UMI 'El Hornero'",
+        rubro: "Socio-comunitario",
+        subrubro: "Unidad Municipal Integrada",
+        gestion: "Pública (Municipal)",
+        direccion: "El Facón y Beltrán",
+        telefono: "11-23502170",
+        email: "umis@marcospaz.gov.ar",
+        barrio: "El Hornero",
+        comuna: "Comuna 7",
+        detalles: "Referente: Norma Verónica Amarilla. Servicios: Corte de pelo, Yoga, Gym adultos."
+    },
+    {
+        id: "soc-umi-capilla",
+        nombre: "UMI 'La Capilla'",
+        rubro: "Socio-comunitario",
+        subrubro: "Unidad Municipal Integrada",
+        gestion: "Pública (Municipal)",
+        direccion: "San Martín N° 1130",
+        telefono: "11-33398089",
+        email: "umis@marcospaz.gov.ar",
+        barrio: "La Capilla",
+        comuna: "Comuna 5",
+        detalles: "Referente: María Fernández. Servicios: Aprendemos juntos, Yoga, Taekwondo."
+    },
+
+    // --- ARTÍSTICA Y CULTURA ---
+    {
+        id: "art-cultura",
+        nombre: "Casa de la Cultura 'Dr. Emiliano Rodríguez'",
+        rubro: "Artística y Cultura",
+        subrubro: "Cultura y Talleres",
+        gestion: "Pública (Municipal)",
+        direccion: "25 de Mayo y Belgrano",
+        telefono: "0220-4773045",
+        email: "cultura@marcospaz.gov.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Espacio de promoción de la expresión, creatividad e identidad cultural local."
+    },
+    {
+        id: "art-musica",
+        nombre: "Escuela Municipal de Música",
+        rubro: "Artística y Cultura",
+        subrubro: "Educación Artística",
+        gestion: "Pública (Municipal)",
+        direccion: "Emilio Mitre N° 139",
+        telefono: "11-31267760",
+        email: "escuelademusica@marcospaz.gov.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Directora: Evangelina Dianda. Talleres de piano, guitarra, batería, violín y ensamble."
+    },
+    {
+        id: "art-museo",
+        nombre: "Museo de Ciencias Naturales 'Lucas Kraglievich'",
+        rubro: "Artística y Cultura",
+        subrubro: "Patrimonio y Museo",
+        gestion: "Pública",
+        direccion: "José C. Paz N° 146",
+        telefono: "Consultar",
+        email: "paleontologia@marcospaz.gov.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Exhibe fósiles hallados en Marcos Paz y organiza excursiones a la reserva paleontológica."
+    },
+
+    // --- JUSTICIA Y SEGURIDAD ---
+    {
+        id: "just-caj",
+        nombre: "Centro de Acceso a la Justicia (CAJ)",
+        rubro: "Justicia y Seguridad",
+        subrubro: "Asesoramiento Legal",
+        gestion: "Nacional",
+        direccion: "Eva Duarte N° 65",
+        telefono: "11-31267931",
+        email: "marcospazcaj@gmail.com",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Asesoramiento legal primario, patrocinio jurídico y abordaje psicosocial."
+    },
+    {
+        id: "just-comisaria-mujer",
+        nombre: "Comisaría de la Mujer y la Familia",
+        rubro: "Justicia y Seguridad",
+        subrubro: "Seguridad / Género",
+        gestion: "Provincial",
+        direccion: "Arias N° 1758",
+        telefono: "0220-4772109",
+        email: "No especifica",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Responsable: Tamara Sampallo. Intervención ante situaciones de violencia familiar y de género."
+    },
+    {
+        id: "just-juzgado",
+        nombre: "Juzgado de Paz Letrado",
+        rubro: "Justicia y Seguridad",
+        subrubro: "Poder Judicial",
+        gestion: "Provincial",
+        direccion: "Sarmiento N° 1842",
+        telefono: "0220-4771755",
+        email: "jpmarcospaz@jusbuenosaires.gov.ar",
+        barrio: "Casco Urbano",
+        comuna: "Comuna 1",
+        detalles: "Jueza: Dra. Gabriela Rosana Molina."
+    }
+];
+
+// Opciones para filtros
+const rubrosDisponibles = ["Todos", "Educación", "Salud", "Socio-comunitario", "Artística y Cultura", "Justicia y Seguridad"];
+const comunasDisponibles = ["Todas", "Comuna 1", "Comuna 2", "Comuna 3", "Comuna 4", "Comuna 5", "Comuna 6", "Comuna 7", "Comuna 8", "Zona Rural"];
