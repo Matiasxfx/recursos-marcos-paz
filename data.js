@@ -1,6 +1,4 @@
-// Base de datos - Demo de Recursos Socio-Comunitarios - Marcos Paz 2026
-// Extraído de la Guía Oficial del COF Marcos Paz[cite: 1]
-
+// Base de datos - Demo de Recursos Socio-Comunitarios con imágenes de Supabase - Marcos Paz 2026
 const dbRecursos = [
     // --- SERVICIOS EDUCATIVOS ---
     {
@@ -14,7 +12,8 @@ const dbRecursos = [
         email: "jardin901marcospaz@abc.gob.ar",
         barrio: "Casco Urbano",
         comuna: "Comuna 1",
-        detalles: "Directivo: Liliana Castañiza. EOE: Extensión al JI N° 906 Maternal."
+        detalles: "Directivo: Liliana Castañiza. EOE: Extensión al JI N° 906 Maternal.",
+        imagen: "https://ghyrsppoheusgkdcnwuo.supabase.co/storage/v1/object/public/instituciones-imgs/WhatsApp%20Image%202026-09-21%20at%2020.06.47-Photoroom.png"
     },
     {
         id: "edu-jardin-905",
@@ -159,7 +158,8 @@ const dbRecursos = [
         email: "No especifica",
         barrio: "Casco Urbano",
         comuna: "Comuna 1",
-        detalles: "Atención integral y guardia 24 hs los 365 días. Especialidades y farmacia REMEDIAR."
+        detalles: "Atención integral y guardia 24 hs los 365 días. Especialidades y farmacia REMEDIAR.",
+        imagen: "https://ghyrsppoheusgkdcnwuo.supabase.co/storage/v1/object/public/instituciones-imgs/WhatsApp%20Image%202026-09-21%20at%2020.06.48-Photoroom.png"
     },
     {
         id: "salud-caps-hourquebie",
@@ -280,7 +280,8 @@ const dbRecursos = [
         email: "cultura@marcospaz.gov.ar",
         barrio: "Casco Urbano",
         comuna: "Comuna 1",
-        detalles: "Espacio de promoción de la expresión, creatividad e identidad cultural local."
+        detalles: "Espacio de promoción de la expresión, creatividad e identidad cultural local.",
+        imagen: "https://ghyrsppoheusgkdcnwuo.supabase.co/storage/v1/object/public/instituciones-imgs/WhatsApp%20Image%202026-09-21%20at%2020.06.48%20(1)-Photoroom.png"
     },
     {
         id: "art-musica",
@@ -351,6 +352,5 @@ const dbRecursos = [
     }
 ];
 
-// Opciones para filtros
 const rubrosDisponibles = ["Todos", "Educación", "Salud", "Socio-comunitario", "Artística y Cultura", "Justicia y Seguridad"];
 const comunasDisponibles = ["Todas", "Comuna 1", "Comuna 2", "Comuna 3", "Comuna 4", "Comuna 5", "Comuna 6", "Comuna 7", "Comuna 8", "Zona Rural"];
